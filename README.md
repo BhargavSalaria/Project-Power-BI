@@ -15,6 +15,33 @@ Humans are not comfortable in consuming numbers from excel files, which is obvio
 Sales director of the AltiQ hardware, decided to build a PowerBI Dashboard for converting the data into 
 visual representation to make data driven decisions. So, he hired a team of data people to complete this task.
 
+## Using Sql Commands 
+
+Show all customer records
+
+SELECT * FROM sales.customers;
+
+Show total number of customers
+
+SELECT count(*) FROM sales.customers;
+
+Show transactions for Chennai market (market code for chennai is Mark001)
+
+SELECT * FROM sales.transactions where market_code='Mark001';
+
+Show distrinct product codes that were sold in chennai
+
+SELECT distinct product_code FROM sales.transactions where market_code='Mark001';
+
+Show transactions where currency is US dollars
+
+SELECT * from sales.transactions where currency="USD";
+
+Show transactions in 2020 join by date table
+
+SELECT sales.transactions.*, sales.date.* FROM sales.transactions INNER JOIN sales.date ON transactions.order_date=date.date where date.year=2020;
+
+
 
 
 ## Steps Followed in this project
